@@ -1,0 +1,24 @@
+mat-divider{
+  margin: .5rem 0rem;
+}
+
+.main {
+  display: flex;
+  padding: .5rem 2rem;
+}
+
+.menu, .content{
+  border-radius: .5rem;
+  padding: .5rem 1rem 2rem;
+  background-color: #f4f4f6;
+  /*background-color: #fafafc;*/
+}
+
+.menu {
+  flex-basis: 14%;
+  margin-right: .3rem;
+}
+
+.content {
+  flex-basis: 85%;
+}

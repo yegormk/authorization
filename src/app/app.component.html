@@ -1,1 +1,13 @@
+<main class="main">
+  <div class="menu">
+    <mat-nav-list>
+      <a routerLink="" routerLinkActive="active" mat-list-item>Assessment Reports</a>
+      <mat-divider></mat-divider>
+      <a routerLink="/users" mat-list-item *ngIf="isAdmin()">Administration section</a>
+    </mat-nav-list>
+  </div>
 
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</main>

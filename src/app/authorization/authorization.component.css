@@ -1,0 +1,5 @@
+.register-form{
+  padding: 1rem .5rem;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,18 @@
+<div *ngIf="assessments$ | async as assessmentsData">
+  <div class="headerAsses">
+    <p class="welcomeHeaderAsses">
+      Welcome to dashboard,
+      {{ assessmentsData.listOfAssessments.length === 1 ? assessmentsData.listOfAssessments[0].name : 'Admin' }}!
+    </p>
+    <button mat-raised-button (click)="logOut()">
+      Log out
+    </button>
+  </div>
+  <mat-spinner class="progressSpinner" *ngIf="assessmentsData.pending"></mat-spinner>
+  <div class="assesReport" (click)="openGraph(asses.id)" *ngFor="let asses of assessmentsData.listOfAssessments">
+    <h3>Name: {{ asses.name }}</h3>
+    <p>Id: {{ asses.id }}</p>
+    <p>Active: {{ asses.active }}</p>
+    <img class="imageAsses" [src]="asses.image_url">
+  </div>
+</div>

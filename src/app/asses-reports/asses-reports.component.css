@@ -1,0 +1,32 @@
+.assesReport {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafc;
+  border-radius: .5rem;
+  padding: 1rem .5rem;
+  border: .1rem rgba(255, 255, 255, 0.71) solid;
+}
+
+.assesReport:hover {
+  cursor: pointer;
+  transition: .4s;
+  background-color: #dadada;
+}
+
+.headerAsses {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.imageAsses {
+  max-width: 90%;
+}
+
+.progressSpinner {
+  margin-left: 40%;
+}

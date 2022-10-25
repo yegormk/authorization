@@ -1,0 +1,44 @@
+<p>Log in</p>
+
+<form class="register-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input
+      type="email"
+      matInput
+      formControlName="email"
+      placeholder="Ex. pat@example.com"
+    >
+    <mat-error
+      *ngIf="loginForm.controls['email'].hasError('email') &&
+      !loginForm.controls['email'].hasError('required')"
+    >
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="loginForm.controls['email'].hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your password</mat-label>
+    <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+    <button
+      mat-icon-button matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="loginForm.controls['password'].hasError('minlength')">
+      Password is <strong>too short</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <button [disabled]="!loginForm.valid" [mat-dialog-close]="loginForm.value" mat-raised-button type="submit" color="primary">Submit</button>
+<!-- Get more information about [mat-dialog-close] and why we should pass it -->
+<!--Interceptor only for adding X-Token-->
+</form>

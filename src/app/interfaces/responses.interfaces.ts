@@ -1,67 +1,66 @@
-export interface loggedUserInfo {
-  first_name: string;
-  last_name: string;
+export interface ILoggedUserInfo {
+  firstName: string;
+  lastName: string;
   role: string;
   token: string;
 }
 
-export interface loginForm {
+export interface ILoginForm {
   email: string;
   password: string;
 }
 
-export interface userAssessment {
+export interface IUserAssessment {
   id: number;
   name: string;
-  users_resolved: number;
   active: boolean;
   image_url: string;
 }
 
-export interface userGraph {
+export interface IUserGraph {
   data: {
-    Agreeableness: number;
-    Drive: number;
-    Luck: number;
-    Openness: number;
+    agreeableness: number;
+    drive: number;
+    luck: number;
+    openness: number;
   };
   type: string;
 }
 
-export interface userInfo {
-  first_name: string;
-  last_name: string;
+export interface IUserInfo {
+  firstName: string;
+  lastName: string;
   email: string;
   groups: string[];
 }
 
-export interface userLoginData {
+export interface IUserLoginData {
   pending: boolean;
   error: string;
-  userData: loggedUserInfo;
+  userData: ILoggedUserInfo;
 }
 
-export interface usersAssessmentData {
+export interface IUsersAssessmentData {
   pending: boolean;
   error: string;
-  listOfAssessments: userAssessment[];
+  listOfAssessments: IUserAssessment[];
 }
 
-export interface userGraphData {
+export interface IUserGraphData {
   pending: boolean;
   error: string;
-  currentUserGraph: userGraph;
+  currentUserGraph: IUserGraph;
 }
 
-export interface listOfUsersData {
+export interface IListOfUsersData {
   pending: boolean;
   error: string;
-  listOfUsers: userInfo[];
+  listOfUsers: IUserInfo[];
 }
 
-export interface authAppState {
-  currentUser: userLoginData;
-  listOfAssessments: usersAssessmentData;
-  userGraph: userGraphData;
-  listOfUsers: listOfUsersData;
+export interface IAuthAppState {
+  currentUser: IUserLoginData;
+  listOfAssessments: IUsersAssessmentData;
+  userGraph: IUserGraphData;
+  listOfUsers: IListOfUsersData;
 }

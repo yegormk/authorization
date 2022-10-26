@@ -1,38 +1,38 @@
 import { createSelector } from '@ngrx/store';
 import {
-  authAppState,
-  usersAssessmentData,
-  userLoginData,
-  userGraphData,
-  listOfUsersData,
+  IAuthAppState,
+  IUsersAssessmentData,
+  IUserLoginData,
+  IUserGraphData,
+  IListOfUsersData,
 } from '../interfaces/responses.interfaces';
 
 export const selectLogin = createSelector(
-  (state: authAppState) => {
+  (state: IAuthAppState) => {
     return state.currentUser;
   },
-  (user: userLoginData) => user,
+  (user: IUserLoginData) => user,
 );
 
 export const selectUserAssessments = createSelector(
-  (state: authAppState) => {
+  (state: IAuthAppState) => {
     return state.listOfAssessments;
   },
-  (listOfAssessments: usersAssessmentData) => {
+  (listOfAssessments: IUsersAssessmentData) => {
     return listOfAssessments;
   },
 );
 
 export const selectGraph = createSelector(
-  (state: authAppState) => {
+  (state: IAuthAppState) => {
     return state.userGraph;
   },
-  (currentGraph: userGraphData) => currentGraph,
+  (currentGraph: IUserGraphData) => currentGraph,
 );
 
 export const selectListOfUsers = createSelector(
-  (state: authAppState) => {
+  (state: IAuthAppState) => {
     return state.listOfUsers;
   },
-  (listOfUsers: listOfUsersData) => listOfUsers,
+  (listOfUsers: IListOfUsersData) => listOfUsers,
 );

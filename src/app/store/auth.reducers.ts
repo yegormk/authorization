@@ -2,44 +2,44 @@ import { createReducer, on } from '@ngrx/store';
 
 import * as AuthActions from './auth.actions';
 import {
-  usersAssessmentData,
-  userLoginData,
-  userGraphData,
-  listOfUsersData,
+  IUsersAssessmentData,
+  IUserLoginData,
+  IUserGraphData,
+  IListOfUsersData,
 } from '../interfaces/responses.interfaces';
 
-const initialStateUserLogin: userLoginData = {
+const initialStateUserLogin: IUserLoginData = {
   pending: false,
   error: '',
   userData: {
-    first_name: '',
-    last_name: '',
+    firstName: '',
+    lastName: '',
     role: '',
     token: '',
   },
 };
 
-const initialStateUserAssessment: usersAssessmentData = {
+const initialStateUserAssessment: IUsersAssessmentData = {
   pending: false,
   error: '',
   listOfAssessments: [],
 };
 
-const initialStateGraph: userGraphData = {
+const initialStateGraph: IUserGraphData = {
   pending: false,
   error: '',
   currentUserGraph: {
     data: {
-      Agreeableness: 0,
-      Drive: 0,
-      Luck: 0,
-      Openness: 0,
+      agreeableness: 0,
+      drive: 0,
+      luck: 0,
+      openness: 0,
     },
     type: '',
   },
 };
 
-const initialStateGetUsers: listOfUsersData = {
+const initialStateGetUsers: IListOfUsersData = {
   pending: false,
   error: '',
   listOfUsers: [],
@@ -58,8 +58,8 @@ export const login = createReducer(
       ...state,
       pending: false,
       userData: {
-        first_name: userData.first_name,
-        last_name: userData.last_name,
+        firstName: userData.firstName,
+        lastName: userData.lastName,
         role: userData.role,
         token: userData.token,
       },

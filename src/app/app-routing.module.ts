@@ -1,22 +1,23 @@
 import { NgModule } from '@angular/core';
-
 import { RouterModule, Routes } from '@angular/router';
-import { AssesReportsComponent } from './asses-reports/asses-reports.component';
-import { AdminPanelComponent } from './admin-panel/admin-panel.component';
-import { HomePageComponent } from './home-page/home-page.component';
 
-import { GraphComponent } from './graph/graph.component';
+import { AssesReportsComponent } from './components/asses-reports/asses-reports.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { GraphComponent } from './components/graph/graph.component';
+import { AuthorizationComponent } from './components/authorization/authorization.component';
+
+
 import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'assessments',
     component: AssesReportsComponent,
     canActivate: [AuthGuard],
   },
   {
-    path: 'home',
-    component: HomePageComponent,
+    path: '',
+    component: AuthorizationComponent,
   },
   {
     path: 'users',

@@ -9,19 +9,18 @@ import { EffectsModule } from '@ngrx/effects';
 
 import { authEffects } from './store/auth.effects';
 import { getAssessments, login, getGraph, getUsers } from './store/auth.reducers';
-import { authAppState } from './interfaces/responses.interfaces';
+import { IAuthAppState } from './interfaces/responses.interfaces';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from './app-routing.module';
-import { AuthorizationComponent } from './authorization/authorization.component';
-import { AssesReportsComponent } from './asses-reports/asses-reports.component';
-import { AdminPanelComponent } from './admin-panel/admin-panel.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { GraphComponent } from './graph/graph.component';
+import { AuthorizationComponent } from './components/authorization/authorization.component';
+import { AssesReportsComponent } from './components/asses-reports/asses-reports.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { GraphComponent } from './components/graph/graph.component';
 import { TokenInterceptor } from './services/addToken.interceptor';
 
-const loginReducerMap: ActionReducerMap<authAppState> = {
+const loginReducerMap: ActionReducerMap<IAuthAppState> = {
   currentUser: login,
   listOfAssessments: getAssessments,
   userGraph: getGraph,
@@ -34,7 +33,6 @@ const loginReducerMap: ActionReducerMap<authAppState> = {
     AuthorizationComponent,
     AssesReportsComponent,
     AdminPanelComponent,
-    HomePageComponent,
     GraphComponent,
   ],
   imports: [

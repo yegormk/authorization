@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Store } from '@ngrx/store';
-
-import { authAppState } from '../interfaces/responses.interfaces';
-
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 
@@ -13,8 +9,6 @@ Chart.register(...registerables);
   styleUrls: ['./graph.component.css'],
 })
 export class GraphComponent implements OnInit {
-  constructor(private store: Store<authAppState>) {}
-
   ngOnInit(): void {
     const myChart = new Chart('myChart', {
       type: 'bar',

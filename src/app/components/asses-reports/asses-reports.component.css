@@ -1,4 +1,4 @@
-.assesReport {
+.asses-report {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,13 +9,13 @@
   border: .1rem rgba(255, 255, 255, 0.71) solid;
 }
 
-.assesReport:hover {
+.asses-report:hover {
   cursor: pointer;
   transition: .4s;
   background-color: #dadada;
 }
 
-.headerAsses {
+.header-asses {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,10 +23,10 @@
   font-size: 1.5rem;
 }
 
-.imageAsses {
+.image-asses {
   max-width: 90%;
 }
 
-.progressSpinner {
+.progress-spinner {
   margin-left: 40%;
 }

@@ -1,13 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component } from '@angular/core';
+
+enum roles {
+  Admin = 'Admin',
+  User = 'User',
+}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
-  constructor(public form: MatDialog) {}
-
-  ngOnInit() {}
+export class AppComponent {
+  isAdmin() {
+    return localStorage.getItem('role') === roles.Admin;
+  }
 }
